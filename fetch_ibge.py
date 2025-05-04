@@ -1,6 +1,6 @@
 
 import requests
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 def fetch_noticias_ibge(qtd=5, termo="inflacao"):
     url = f"http://servicodados.ibge.gov.br/api/v3/noticias?busca={termo}&orderBy=data&sort=desc&qtd={qtd}"
@@ -25,5 +25,6 @@ def fetch_noticias_ibge(qtd=5, termo="inflacao"):
         chunks = splitter.split_text(conteudo)
         for chunk in chunks:
             texts.append(chunk)
-            metadatas.append(metadata)
+        metadatas.append(metadata)
+
     return texts, metadatas

@@ -1,0 +1,8 @@
+
+requests
+sentence-transformers
+sqlite-vec
+psutil
+transformers
+torch
+langchain-text-splitters
